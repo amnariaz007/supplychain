@@ -2,36 +2,19 @@
 pragma solidity ^0.8.17;
 
 contract supplychain {
-    struct ManufacturerDetails {
+    struct ProductDetails {
         string current_owner;
         string previous_owner;
         string owner_name;
         string mgf_date;
         string exp_date;
         uint256 barcodeid;
+        string product_name;
+        uint256 product_id;
     }
 
-    struct DistributorDetails {
-        string current_owner;
-        string previous_owner;
-        string owner_name;
-        string mgf_date;
-        string exp_date;
-        uint256 barcodeid;
-    }
-
-    struct RetailerDetails {
-        string current_owner;
-        string previous_owner;
-        string owner_name;
-        string mgf_date;
-        string exp_date;
-        uint256 barcodeid;
-    }
-
-    mapping(uint256 => ManufacturerDetails) public M_detail;
-    mapping(uint256 => DistributorDetails) public D_detail;
-    mapping(uint256 => RetailerDetails) public R_detail;
+    mapping(uint256 => ProductDetails) public detail;
+    
 
     function manufacturer(
         string memory current_owner,
@@ -39,14 +22,18 @@ contract supplychain {
         string memory owner_name,
         string memory mgf_date,
         string memory exp_date,
-        uint256 barcodeid
+        uint256 barcodeid,
+        string memory product_name,
+        uint256 product_id
     ) public {
-        M_detail[barcodeid].current_owner = current_owner;
-        M_detail[barcodeid].previous_owner = previous_owner;
-        M_detail[barcodeid].owner_name = owner_name;
-        M_detail[barcodeid].mgf_date = mgf_date;
-        M_detail[barcodeid].exp_date = exp_date;
-        M_detail[barcodeid].barcodeid = barcodeid;
+        detail[barcodeid].current_owner = current_owner;
+        detail[barcodeid].previous_owner = previous_owner;
+        detail[barcodeid].owner_name = owner_name;
+        detail[barcodeid].mgf_date = mgf_date;
+        detail[barcodeid].exp_date = exp_date;
+        detail[barcodeid].barcodeid = barcodeid;
+        detail[barcodeid].product_name = product_name;
+        detail[barcodeid].product_id = product_id;
     }
 
     function distributer(
@@ -55,14 +42,18 @@ contract supplychain {
         string memory owner_name,
         string memory mgf_date,
         string memory exp_date,
-        uint256 barcodeid
+        uint256 barcodeid,
+        string memory product_name,
+        uint256 product_id
     ) public {
-        D_detail[barcodeid].current_owner = current_owner;
-        D_detail[barcodeid].previous_owner = previous_owner;
-        D_detail[barcodeid].owner_name = owner_name;
-        D_detail[barcodeid].mgf_date = mgf_date;
-        D_detail[barcodeid].exp_date = exp_date;
-        D_detail[barcodeid].barcodeid = barcodeid;
+        detail[barcodeid].current_owner = current_owner;
+        detail[barcodeid].previous_owner = previous_owner;
+        detail[barcodeid].owner_name = owner_name;
+        detail[barcodeid].mgf_date = mgf_date;
+        detail[barcodeid].exp_date = exp_date;
+        detail[barcodeid].barcodeid = barcodeid;
+        detail[barcodeid].product_name = product_name;
+        detail[barcodeid].product_id = product_id;
     }
 
     function Retailer(
@@ -71,13 +62,17 @@ contract supplychain {
         string memory owner_name,
         string memory mgf_date,
         string memory exp_date,
-        uint256 barcodeid
+        uint256 barcodeid,
+        string memory product_name,
+        uint256 product_id
     ) public {
-        R_detail[barcodeid].current_owner = current_owner;
-        R_detail[barcodeid].previous_owner = previous_owner;
-        R_detail[barcodeid].owner_name = owner_name;
-        R_detail[barcodeid].mgf_date = mgf_date;
-        R_detail[barcodeid].exp_date = exp_date;
-        R_detail[barcodeid].barcodeid = barcodeid;
+        detail[barcodeid].current_owner = current_owner;
+        detail[barcodeid].previous_owner = previous_owner;
+        detail[barcodeid].owner_name = owner_name;
+        detail[barcodeid].mgf_date = mgf_date;
+        detail[barcodeid].exp_date = exp_date;
+        detail[barcodeid].barcodeid = barcodeid;
+        detail[barcodeid].product_name = product_name;
+        detail[barcodeid].product_id = product_id;
     }
 }
