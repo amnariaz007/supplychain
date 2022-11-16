@@ -94,7 +94,6 @@ contract supplychain {
         detail[barcodeid].current_owner = "Retailor";
         detail[barcodeid].previous_owner = "Distributor";
         detail[barcodeid].third_owner_name = owner_name;
-
         detail[barcodeid].barcodeid = barcodeid;
         detail[barcodeid].product_name = product_name;
     }
