@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
+
 contract supplychain {
     struct ProductDetails {
         string current_owner;
